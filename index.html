@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario Validacion</title>
+</head>
+<link rel="stylesheet" href="estilo.css">
+
+<body>
+  <div class="seccion1 ancho">
+  </div>
+  <div class="seccion2 ancho">
+    <br>
+    <img class="imagen1" src="imagenes/logo_cabecera.png" alt="">
+    <br><br>
+  </div>
+  <div class="seccion3 ancho">
+    <br>
+    <h1>DÉJANOS CONOCERTE</h1>
+    <br>
+  </div>
+  <div class="seccion4">
+  </div>
+  <div class="seccion5 ancho">
+    <br>
+    <div class="seccion5_1">
+      <h2>¡Compártenos tu información!</h2>
+      <br>
+      <p>Dejanos tus datos personales y nosotros nos comunicamos contigo lo más pronto posible.</p>
+      <br>
+      <form class="formato" action="enviar.php" name="formulario" enctype="multipart/form-data">
+        <div class="formularioizquierdo">
+
+          <input type="text" class = "login" placeholder="Nombre Completo*" id="nombrecompleto" name="nombre">
+
+          <input type="email" class = "login" placeholder="Correo Electronico*" id="correoelectronico" name="correo">
+
+          <input type="tel" class = "login" placeholder="Celular*" maxlength="10" id="celularcompleto" name="celular">
+
+          <input type="text" class = "login" placeholder="Ciudad">
+
+          <input type="text" class = "login" placeholder="Localidad">
+        </div>
+        <div class="formularioderecho">
+
+          <input type="text" class = "login" placeholder="Estado">
+
+          <input type="text" class = "login" placeholder="Colonia">
+
+          <select name="intereses" class="login">
+            <option value="" selected>Elige tu área de interes</option>
+            <option value="">Cajas</option>
+            <option value="">Servicios</option>
+            <option value="">Asesoramiento Financiero</option>
+            <option value="">Gestoría y Cobranza</option>
+            <option value="">Crédito</option>
+            <option value="">Jurídico</option>
+            <option value="">Archivo</option>
+            <option value="">Mercadotecnia</option>
+            <option value="">Diligencias</option>
+            <option value="">Compras</option>
+            <option value="">Intendencia</option>
+            <option value="">Auditoría</option>
+            <option value="">Capital Humano</option>
+        </select>
+
+        <div class="infosubir">
+          <p>Sube tu Curriculum en formato PDF <span>(no exceder de 5 MB)</span>
+            <img class="imagen2" src="imagenes/icono_pdf.png" alt="pdf">
+          </p>
+        </div>
+
+        <input type="file" accept=".pdf" class="login">
+        <br><br><br>
+
+        <input id="boton" type="button" value="Enviar" class = "btEnviar" onclick="valida_formulario()">
+        <br><br><br>
+        </div>
+      </form>
+    </div>
+    <br>
+  </div>
+  <div class="seccion6 ancho">
+    <br><br>
+    <h2>Erick Adriel Moo Calan</h2>
+    <h2>7SB</h2>
+    <h2>Programación Web</h2>
+  </div>
+
+  <script>
+
+    function valida_formulario()
+    {
+      if(document.getElementById('nombrecompleto').value.length == 0)
+      {
+        alert("Escribe tu nombre completo")
+        document.getElementById("nombrecompleto").focus()
+        return 0;
+      }
+
+      if(document.getElementById('correoelectronico').value.length == 0)
+      {
+        alert("Escribe tu correo electrónico")
+        document.getElementById("correoelectronico").focus()
+        return 0;
+      }
+
+      if(document.getElementById('celularcompleto').value.length == 0)
+      {
+        alert("Escribe tu número de celular")
+        document.getElementById("celularcompleto").focus()
+        return 0;
+      }
+
+      
+
+      document.formulario.submit();
+    }
+
+  </script>
+</body>
+</html>
